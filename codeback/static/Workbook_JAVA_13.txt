@@ -1,0 +1,60 @@
+JAVA 언어의 Basic Input and Output은 프로그램에서 입력과 출력을 다루기 위한 기본적인 방법을 제공합니다. 이 기능을 사용하여 사용자와 상호작용하거나 파일에 데이터를 저장하고 불러올 수 있습니다. 
+
+자바에서의 입력은 주로 scanner 클래스를 이용해서 이뤄집니다. scanner 클래스를 사용하면 사용자로부터 키보드로 입력을 받을 수 있습니다. 
+
+```java
+import java.util.Scanner;
+
+public class Main {
+  public static void main(String[] args) {
+    Scanner myObj = new Scanner(System.in);
+    System.out.println("Enter username");
+
+    String username = myObj.nextLine();
+    System.out.println("Username is: " + username);
+  }
+}
+```
+
+위의 코드에서는 `java.util.Scanner` 라이브러리를 이용하여 사용자로부터 입력을 받습니다. `Scanner`는 키보드로부터 입력을 받아서 `String` 또는 다른 자료형으로 변경할 수 있게 해줍니다. `myObj.nextLine()`은 다음에 입력될 행 전체를 받아들임으로써 사용자 입력을 읽어옵니다.
+
+반면, 출력은 `System.out.print`와 `System.out.println`과 같은 출력 메소드를 사용하여 쉽게 실행할 수 있습니다. 
+
+```java
+System.out.print("My name is ");
+System.out.println("Java");
+```
+
+위 예제에서는 `System.out.print`와 `System.out.println` 메소드를 사용하여 두 줄에 걸쳐 "My name is Java"를 출력합니다. `print` 메소드는 텍스트를 출력하고, `println` 메소드는 텍스트를 출력한 후 새 줄에 대한 지정을 추가합니다.
+
+파일에서 입력 및 출력을 수행하는 방법도 있습니다. `java.io` 패키지에서 제공하는 `FileInputStream`, `FileOutputStream`, `BufferedInputStream`, `BufferedOutputStream` 등의 클래스를 사용할 수 있습니다.
+
+```java
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Main {
+  public static void main(String[] args) {
+    try {
+      BufferedWriter writer = new BufferedWriter(new FileWriter("filename.txt"));
+      writer.write("Hello World");
+      writer.close();
+
+      BufferedReader reader = new BufferedReader(new FileReader("filename.txt"));
+      String line = reader.readLine();
+      System.out.println(line);
+      reader.close();
+    } catch (IOException e) {
+      System.out.println("An error occurred.");
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+위의 코드에서는 파일에 데이터를 작성하고 읽기 위해 `BufferedWriter`와 `BufferedReader` 클래스를 사용합니다. 파일에 문자열 "Hello World"를 작성한 후 `BufferedReader` 클래스를 사용하여 파일에서 내용을 읽습니다. 파일을 사용할 때는 `try-catch` 구문으로 예외 처리를 해야합니다.
+
+이와 같이 JAVA 언어는 다양한 입출력 방법을 지원하여 사용자로부터 입력을 받는 것부터 파일에 데이터를 작성 및 읽기까지 다양한 기능들을 제공합니다. 개발자는 이를 활용하여 다양한 프로그램을 작성할 수 있습니다.

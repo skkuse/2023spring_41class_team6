@@ -1,0 +1,31 @@
+.langdrop{
+    display: flex;
+flex-direction: row;
+}
+
+.langdropbox{
+    padding-top: 0.5rem;
+padding-bottom: 0.5rem;
+padding-left: 1rem;
+padding-right: 1rem;
+}
+
+.codeeditorbox{
+    display: flex;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: 1rem;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.codeeditorwindow{
+    display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: flex-end;
+width: 100%;
+height: 100%;
+}

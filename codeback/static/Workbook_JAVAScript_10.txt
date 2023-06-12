@@ -1,0 +1,58 @@
+JavaScript 언어에서 객체는 다른 유형의 데이터를 포함하거나 여러 가지 특성과 기능을 가지고 있는 복합 데이터 유형입니다. 객체는 중괄호 { } 블록으로 정의되며, 각 속성은 쉼표로 구분됩니다.
+
+```javascript
+let person = {
+  name: 'Mike',
+  age: 30,
+  gender: 'male',
+  getFullName: function() {
+    return this.name;
+  }
+};
+```
+
+위 예제에서 `person` 객체는 이름, 나이, 성별 등의 속성과 `getFullName`이라는 메서드를 갖습니다. 또한 `this`를 사용하여 객체 내부의 속성에 엑세스할 수 있습니다.
+
+객체에는 또한 객체의 속성에 대한 값에 대한 엑세스를 허용하는 두 가지 유형의 표기법이 있습니다. 아래 예제를 보십시오.
+
+```javascript
+let person = {
+  name: 'Mike',
+  age: 30,
+  gender: 'male',
+  getFullName: function() {
+    return this.name;
+  }
+};
+
+// 점 표기법 (dot notation)
+console.log(person.name); // 'Mike'
+console.log(person.age); // 30
+
+// 괄호 표기법 (bracket notation)
+console.log(person['gender']); // 'male'
+console.log(person['getFullName']()); // 'Mike'
+```
+
+위 예제에서 `person` 객체에는 `name`, `age`, `gender` 속성과 `getFullName` 메서드가 있습니다. `점 표기법`을 사용하면 속성 이름을 직접 지정하여 속성값에 액세스할 수 있습니다. 그러나 `괄호 표기법`은 속성 이름을 문자열로 전달하는 데 사용되며, 문자열에 따옴표를 사용해야 합니다. 이것이 객체의 키(key)와 값(value) 쌍을 이루는 이유입니다.
+
+객체에는 프로토타입(prototype)이 있습니다. 프로토타입은 객체에서 상속(inheritance)용으로 사용됩니다. JavaScript에서 대부분의 객체는 Object.prototype에서 상속된 메서드와 속성을 갖습니다. 객체에서 메서드나 속성을 사용할 수 없을 때 자바스크립트는 해당 객체의 프로토타입에서 해당 메서드나 속성을 찾습니다. 프로토타입 체인(prototype chain)에서 해당 메서드나 속성이 발견되지 않으면, JavaScript는 상위 프로토타입에서 해당 메서드나 속성을 찾습니다.
+
+```javascript
+let myArray = [];
+console.log(myArray.__proto__); // Array.prototype
+
+let person = {
+  name: 'Mike',
+  age: 30,
+  gender: 'male',
+  getFullName: function() {
+    return this.name;
+  }
+};
+console.log(person.__proto__); // Object.prototype
+```
+
+위의 예제에서 myArray와 person 객체에는 프로토타입이 있습니다. 이러한 프로토타입은 JavaScript에서 상속을 하는 데 사용됩니다.
+
+JavaScript에서 객체는 매우 강력한 유형의 데이터입니다. 객체는 함수, 배열, 숫자, 문자열, 불리언 값 등 모든 JavaScript 데이터 유형을 포함할 수 있는 복합 데이터 유형입니다. 따라서 객체는 JavaScript에서 핵심적인 데이터 유형입니다.

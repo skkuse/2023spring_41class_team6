@@ -1,0 +1,28 @@
+JavaScript 언어에서 클로저 (Closure) 란 함수와 함수가 선언될 당시의 렉시컬 환경 (Lexical Environment) 사이의 결합을 의미합니다. 클로저는 함수 내부에서 선언된 변수를 외부에서도 사용이 가능하도록 하기 때문에 중요한 개념 중 하나입니다.
+
+클로저가 어떻게 작동하는지 이해하기 위해서는 먼저 렉시컬 스코프 (Lexical Scope) 라는 개념을 이해해야 합니다. 렉시컬 스코프는 함수가 선언된 위치에 따라 그 함수의 상위 스코프가 결정되는 것입니다. 즉, 함수가 호출된 위치에 따라 상위 스코프가 결정되는 것이 아니라, 함수가 선언된 위치에 따라 상위 스코프가 결정되는 것입니다.
+
+이러한 렉시컬 스코프의 특성을 이용해서 함수 내부에서 선언될 변수의 스코프를 조작할 수 있습니다. 함수 내부에서 선언된 변수는 해당 함수가 종료될 때까지 유효하게 유지됩니다. 따라서 함수 내부에서 선언된 변수를 외부에서 사용하게 되면, 외부에서도 해당 변수에 접근할 수 있게 됩니다.
+
+다음은 클로저의 간단한 예시입니다.
+
+```
+function outerFunction() {
+  var outerVariable = 10;
+  
+  function innerFunction() {
+    console.log(outerVariable);
+  }
+  
+  return innerFunction;
+}
+
+var functionClosure = outerFunction();
+functionClosure(); // 결과 : 10
+```
+
+위 코드에서 outerFunction은 innerFunction의 클로저입니다. innerFunction에서 외부의 outerVariable에 접근할 수 있도록 하기 위해서는, outerFunction에서 반환된 innerFunction을 변수에 대입해서 호출해야 합니다.
+
+즉, outerFunction에서 반환된 innerFunction은 outerVariable에 대한 클로저를 가지고 있기 때문에, innerFunction이 호출될 때도 여전히 해당 변수에 접근이 가능합니다. 따라서 위 코드에서 functionClosure를 호출하면, innerFunction이 실행되는데 이때 outerFunction의 outerVariable에 접근해서 그 값을 출력하게 됩니다.
+
+클로저는 변수나 함수의 접근 권한을 조절하고 변수를 숨기는 등 다양한 용도로 활용됩니다. 하지만, 클로저를 사용하면서 주의할 점도 있습니다. 클로저로 인해 메모리 누수가 발생할 수 있으며, 함수의 성능에도 영향을 미칠 수 있습니다. 클로저를 사용할 때는 이러한 점들을 항상 고려해서 적절하게 활용해야 합니다.

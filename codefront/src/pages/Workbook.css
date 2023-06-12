@@ -1,0 +1,147 @@
+
+
+  .content_background{
+    background: #f5f7f8;
+    font-family: sans-serif;
+    padding: 20px 0;
+  }
+
+  .band_workbook {
+    width: 90%;
+    max-width: 1240px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 20px;
+  }
+
+  @media only screen and (min-width: 500px) {
+    .band_workbook {
+      grid-template-columns: 1fr;
+    }
+
+    .title_workbook {
+      grid-column: 1/6;
+    }
+
+    /* .item-1 h1 {
+      font-size: 30px;
+    } */
+  }
+
+  @media only screen and (min-width: 800px) {
+    .band_workbook {
+
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* card */
+  .card_workbook {
+    min-height: 50px;
+    width: 1100px;
+    background: #F7F2E0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: #444;
+    position: relative;
+    top: 0;
+    transition: all .1s ease-in;
+    margin-left: 50px;
+  }
+
+
+  .card_workbook article {
+    padding: 20px;
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .card_workbook .thumb {
+    padding-bottom: 60%;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .card_workbook p {
+    flex: 1;
+    /* make p grow to fill available space*/
+    line-height: 1.4;
+  }
+
+  /* typography */
+  h1_workbook {
+    font-size: 20px;
+    margin: 0;
+    color: #333;
+  }
+
+  .card_workbook span {
+    font-size: 12px;
+    font-weight: bold;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    margin: 2em 0 0 0;
+  }
+
+  .checkbox_workbook {
+    text-align: right;
+  }
+
+  #chap_button_workbook {
+    background-color: #F6CECE;
+    border-radius: 20px;
+  }
+
+  .back_button_workbook {
+    weight: 50px;
+    text-align: right;
+    background-color: #f5f7f8;
+  }
+
+  .content_workbook {
+    width: 1100px;
+    min-height: 800px;
+    background: #F7F2E0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: #444;
+    position: relative;
+    top: 0;
+    transition: all .1s ease-in;
+    margin-left: 50px;
+  }
+
+  .content_workbook span {
+    font-size: 12px;
+    font-weight: bold;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    margin: 2em 0 0 0;
+  }
+
+  .content_workbook p {
+    flex: 1;
+    /* make p grow to fill available space*/
+    line-height: 1.4;
+  }
+
+  .content_workbook .thumb {
+    padding-bottom: 60%;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  #title_workbook_workbook {
+    font-size: 40px;
+    /* margin-top: 5px; */
+  }

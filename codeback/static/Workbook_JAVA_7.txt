@@ -1,0 +1,70 @@
+JAVA 언어에서 OOP(Object-Oriented Programming)은 중요한 개념입니다. 클래스와 객체는 OOP를 적용하는 데 필수적인 요소입니다. 이번에는 초급 단계에서 JAVA 언어의 Classes and Objects에 대해 알아보겠습니다.
+
+클래스(Class)는 객체의 청사진(혹은 설계도)입니다. 클래스는 객체를 만들기 위한 필드(field)와 메소드(method)를 포함합니다. 필드는 객체의 속성(property)을 나타내고, 메소드는 객체가 수행하는 작업(operation)을 나타냅니다.
+
+객체(Object)는 클래스를 기반으로 만들어진 실체입니다. 객체는 클래스를 기반으로 생성되며, 다른 객체와 독립적으로 존재합니다. 객체는 클래스의 필드를 가지고 있으며, 이 필드들은 객체마다 값이 다를 수 있습니다.
+
+예를 들어, 학생 클래스(Student)는 학생의 정보를 저장합니다. Student 클래스는 이름, 학번과 성적 등을 저장하는 필드를 가지고 있을 수 있습니다. 학생 객체는 이러한 필드들이 다른 값을 가질 수 있습니다. Anthony 학생 객체는 이름이 "Anthony", 학번이 "20210001"이고 성적이 "A"일 수도 있습니다. 하지만 Andrew 학생 객체는 이름이 "Andrew", 학번이 "20210002"이고 성적이 "B"일 수 있습니다.
+
+클래스는 다음과 같은 방법으로 작성됩니다.
+
+```
+public class ClassName {
+    // Fields
+    private dataType fieldName1;
+    private dataType fieldName2;
+
+    // Constructors
+    public ClassName(dataType fieldName1, dataType fieldName2) {
+        this.fieldName1 = fieldName1;
+        this.fieldName2 = fieldName2;
+    }
+
+    // Methods
+    public returnType methodName1(parameter1, parameter2) {
+        // Method body
+    }
+
+    public returnType methodName2(parameter1, parameter2) {
+        // Method body
+    }
+}
+```
+
+위의 클래스는 3개의 부분으로 나눠집니다: 필드, 생성자, 메소드입니다. 필드는 클래스의 속성을 정의하며, private 접근 제한자를 사용하여 액세스를 제한합니다. 생성자는 객체를 만들기 위한 함수입니다. 클래스를 이용하여 객체를 생성할 때, 생성자는 클래스의 필드를 초기화합니다. 메소드는 클래스가 제공하는 기능을 정의합니다.
+
+아래는 이러한 클래스를 생성하고 객체를 만드는 예시입니다.
+
+```
+public class Student {
+    private String name;
+    private String id;
+    private int score;
+
+    public Student(String name, String id, int score) {
+        this.name = name;
+        this.id = id;
+        this.score = score;
+    }
+
+    public void printInfo() {
+        System.out.println("Name: " + this.name);
+        System.out.println("ID: " + this.id);
+        System.out.println("Score: " + this.score);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student anthony = new Student("Anthony", "20210001", 95);
+        Student andrew = new Student("Andrew", "20210002", 85);
+
+        anthony.printInfo();
+        andrew.printInfo();
+    }
+}
+```
+
+위의 코드에서는 학생 클래스(Student)가 정의되어 있고, 생성자와 printInfo 메소드를 가지고 있습니다. main 함수에서는 두 개의 새로운 학생(Anthony와 Andrew) 객체를 만들고, 이들 객체의 정보를 출력합니다.
+
+클래스와 객체는 OOP의 핵심 개념입니다. 클래스는 객체의 청사진이고, 객체는 클래스를 기반으로 만들어져 다른 객체와 독립적으로 존재합니다. 필드와 메소드를 포함하는 클래스를 만들고, 객체를 생성하여 이러한 필드와 메소드를 사용할 수 있습니다.
