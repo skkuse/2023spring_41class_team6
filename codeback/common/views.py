@@ -1,8 +1,8 @@
 import json
 from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render, redirect
 from .models import Userdata
 from .forms import Documentfrom
+import subprocess
 
 # Create your views here.
 def login(request):
@@ -42,6 +42,9 @@ def signup(request):
         form = Documentfrom(data)
         if form.is_valid():
             form.save()
+            # register 100명 넘으면 commender.py run
+            if Userdata.objects.count() > 100:
+                subprocess.run(["python", "commender.py"])   
             return HttpResponse("Success")
         else:
             print(form.errors)
