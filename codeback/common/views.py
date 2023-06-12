@@ -2,7 +2,8 @@ import json
 from django.http import HttpResponse, JsonResponse
 from .models import Userdata
 from .forms import Documentfrom
-import subprocess
+import os
+from recommender import recommender
 
 # Create your views here.
 def login(request):
@@ -42,9 +43,10 @@ def signup(request):
         form = Documentfrom(data)
         if form.is_valid():
             form.save()
+            recommender('user_id', 5)
             # register 100명 넘으면 commender.py run
             if Userdata.objects.count() > 100:
-                subprocess.run(["python", "commender.py"])   
+                os.system("python recommender_data.py")   
             return HttpResponse("Success")
         else:
             print(form.errors)
