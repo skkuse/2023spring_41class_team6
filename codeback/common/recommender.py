@@ -12,8 +12,8 @@ from tqdm import tqdm
 import scipy.sparse as sparse
 import pickle
 def rating_history_generator():
-    df_history = pd.read_csv("q_recommend_res.csv")
-    df_user = pd.read_csv("user_info.csv")
+    df_history = pd.read_csv("static/q_recommend_res.csv")
+    df_user = pd.read_csv("static/user_info.csv")
     df_savor = pd.DataFrame(columns = ['user_id', 'item_id', 'rating'])
     for i in tqdm(range(len(df_history))):
         number_of_solved_questions = 0
@@ -37,20 +37,20 @@ def rating_history_generator():
         input_ser['rating'] = rating_inv
         df_savor = pd.concat([df_savor, input_ser], ignore_index=True)
     #save df_savor to csv
-    df_savor.to_csv("rating_data.csv", index = False)
+    df_savor.to_csv("static/rating_data.csv", index = False)
 def recommender(user_id, top_k):
-    if(os.path.isfile("rating_data.csv")==False):
+    if(os.path.isfile("static/rating_data.csv")==False):
         rating_history_generator()
-    df_savor = pd.read_csv("rating_data.csv")
-    if(os.path.isfile("rec_model.pkl")==False):
+    df_savor = pd.read_csv("static/rating_data.csv")
+    if(os.path.isfile("static/rec_model.pkl")==False):
         model = als.AlternatingLeastSquares(factors=50, regularization=0.01, iterations=50)
         #make sparse matrix
         sparse_matrix = sparse.csr_matrix((df_savor['rating'], (df_savor['user_id'], df_savor['item_id'])))
         #train the model
         model.fit(sparse_matrix)
-        pickle.dump(model, open("rec_model.pkl", 'wb'))
+        pickle.dump(model, open("static/rec_model.pkl", 'wb'))
     #load the model
-    rec_model = pickle.load(open("rec_model.pkl", 'rb'))
+    rec_model = pickle.load(open("static/rec_model.pkl", 'rb'))
     list_of_existing_user_id = df_savor['user_id'].tolist()
     list_of_existing_user_id = sorted(list(set(list_of_existing_user_id)))
     #Sort item_id according to occurence

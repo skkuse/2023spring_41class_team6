@@ -24,3 +24,8 @@ class Userdata(models.Model):
     
     def __str__(self):
         return self.username
+    
+class ProbList(models.Model):
+    id = models.AutoField(primary_key=True)
+    username = models.CharField(Userdata, max_length=30)
+    qlist = models.JSONField(default=list)

@@ -1,9 +1,9 @@
 import json
 from django.http import HttpResponse, JsonResponse
-from .models import Userdata
+from .models import Userdata, ProbList
 from .forms import Documentfrom
 import os
-from recommender import recommender
+from .recommender import recommender
 
 # Create your views here.
 def login(request):
@@ -43,7 +43,12 @@ def signup(request):
         form = Documentfrom(data)
         if form.is_valid():
             form.save()
-            recommender('user_id', 5)
+            user_id = json.loads(request.body).get("username")
+            print(user_id)
+            user = Userdata.objects.get(username = user_id)
+            recommender_list = recommender(user.id, 5)
+            prob_list = ProbList.objects.create(username=user, qlist=recommender_list)
+            
             # register 100명 넘으면 commender.py run
             if Userdata.objects.count() > 100:
                 os.system("python recommender_data.py")   
