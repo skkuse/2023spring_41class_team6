@@ -1,0 +1,83 @@
+JavaScript 언어에서 ES6는 ECMAScript 2015라고도 불리며, 많은 새로운 문법을 도입한 버전입니다. 이번에는 ES6에서 도입된 중요한 문법들에 대해 설명해드리겠습니다.
+
+첫 번째로 소개할 ES6에 추가된 문법은 const와 let입니다. 기존의 var 키워드로 변수를 선언하던 방식과는 달리, const와 let은 블록 스코프를 가집니다.
+
+예를 들어, 아래와 같은 코드가 있다면:
+
+```javascript
+var x = 1;
+if (true) {
+  var x = 2;
+  console.log(x);
+}
+console.log(x);
+```
+
+위 코드에서는 첫 번째 console.log()에서 2가 출력되고 두 번째 console.log()에서도 2가 출력됩니다. 그 이유는 var 키워드로 선언한 x 변수가 전역 스코프를 가지기 때문입니다.
+
+하지만 ES6에서는 const와 let을 이용해 블록 스코프를 가지도록 변경되었습니다.
+
+```javascript
+let x = 1;
+if (true) {
+  let x = 2;
+  console.log(x);
+}
+console.log(x);
+```
+
+위 코드에서는 첫 번째 console.log()에서 2가 출력되지만, 두 번째 console.log()에서는 1이 출력됩니다. 왜냐하면 let 키워드로 선언한 x 변수는 블록 스코프를 갖기 때문입니다.
+
+두 번째로 소개할 문법은 Arrow Function입니다. Arrow Function은 함수를 더욱 간단하게 작성할 수 있도록 도와줍니다. 
+
+기존의 함수 표현식은 다음과 같이 작성됩니다:
+
+```javascript
+var sum = function(a, b) {
+  return a + b;
+}
+```
+
+하지만 Arrow Function을 이용하면 다음과 같이 함수를 간단하게 표현할 수 있습니다:
+
+```javascript
+const sum = (a, b) => a + b;
+```
+
+세 번째로 소개할 문법은 Template Literal입니다. 기존의 문자열 표현 방법에서 템플릿 리터럴을 이용해 변수의 값을 쉽게 입력할 수 있습니다.
+
+예를 들어, 문자열과 변수를 동시에 출력하려면 아래와 같은 방법을 사용해야 했습니다.
+
+```javascript
+var name = "John";
+console.log("Hello " + name + "!");
+```
+
+하지만, ES6의 Template Literal을 이용하면 다음과 같이 간단하게 출력할 수 있습니다.
+
+```javascript
+const name = "John";
+console.log(`Hello ${name}!`);
+```
+
+마지막으로 소개할 문법은 Class입니다. 기존에도 JavaScript에서는 객체 지향 프로그래밍이 가능했지만, Class 문법을 통해 객체를 더욱 간단하게 정의할 수 있습니다.
+
+```javascript
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  sayHello() {
+    console.log(`Hello, my name is ${this.name} and I'm ${this.age} years old.`);
+  }
+}
+
+const person1 = new Person("John", 30);
+person1.sayHello();
+```
+
+위 코드에서는 Person이라는 클래스를 생성하고, constructor를 이용해 name과 age 속성을 정의했습니다. 또한 sayHello 메소드를 이용해 인사말을 출력하도록 설정했습니다. 마지막으로 person1이라는 객체를 생성하고, sayHello 메소드를 호출하여 결과를 출력합니다.
+
+ES6에서 도입된 새로운 문법은 매우 다양합니다. 위에서 설명한 문법 외에도, Promise, Rest Parameter, Spread Operator, Destructuring 등 많은 기능이 추가되었습니다. 이러한 새로운 문법을 숙지하면 JavaScript 코드를 더욱 간결하고 가독성 있게 작성할 수 있습니다.

@@ -1,0 +1,42 @@
+C++ 언어는 객체지향 프로그래밍에서 핵심적인 역할을 하고 있습니다. 객체지향 프로그래밍은 현실 세계의 개념을 프로그래밍에 적용한 패러다임으로, C++ 언어는 이러한 패러다임을 적극적으로 활용할 수 있도록 디자인되었습니다.
+
+C++ 언어에서 객체는 데이터와 이 데이터를 조작하는 함수를 하나의 단위로 묶어서 캡슐화하고, 상호작용하는 객체들 간에는 인터페이스를 통해 통신합니다. 이를 통해 코드의 재사용성, 유지보수성 등의 이점을 얻을 수 있습니다.
+
+예를 들어, 하나의 은행 계좌 객체를 만들어보겠습니다. 해당 객체는 잔액과 입출금을 처리하는 함수를 가지고 있으며, 다른 객체와는 인터페이스를 통해 상호작용합니다.
+
+```c++
+#include <iostream>
+using namespace std;
+
+class Account {
+private:
+    int balance;
+public:
+    Account(int initial_deposit) {
+        balance = initial_deposit;
+    }
+    int check_balance() {
+        return balance;
+    }
+    void deposit(int amount) {
+        balance += amount;
+    }
+    void withdraw(int amount) {
+        balance -= amount;
+    }
+};
+
+int main() {
+    Account my_account(1000); // 1000원으로 계좌 생성
+    cout << "현재 잔액: " << my_account.check_balance() << "원" << endl;
+    my_account.withdraw(500); // 500원 출금
+    cout << "현재 잔액: " << my_account.check_balance() << "원" << endl;
+    my_account.deposit(1000); // 1000원 입금
+    cout << "현재 잔액: " << my_account.check_balance() << "원" << endl;
+    return 0;
+}
+```
+
+위 코드에서 `Account` 클래스는 은행 계좌 객체를 나타내며, `check_balance`, `deposit`, `withdraw` 함수는 각각 잔액 조회, 입금, 출금을 처리합니다. `my_account` 객체를 생성하여 초기 잔액을 1000원으로 설정하고, `withdraw` 함수를 호출하여 500원을 출금하고, `deposit` 함수를 호출하여 1000원을 예금했습니다.
+
+객체지향 프로그래밍을 제대로 활용하면 코드의 가독성과 유지보수성이 더욱 향상되며, 프로그램의 크기가 커질수록 더욱 그 중요성이 커집니다. C++ 언어를 사용하면 객체지향 프로그래밍을 보다 쉽고 효율적으로 구현할 수 있습니다.

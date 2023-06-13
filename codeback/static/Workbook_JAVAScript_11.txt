@@ -1,0 +1,98 @@
+JavaScript 언어에서 배열은 여러 데이터를 저장하고 관리하는 데 사용하는 정말 유용한 도구입니다. 이번에는 JavaScript 배열 함수에 대해 알아보겠습니다.
+
+#### 1. push()
+`push()` 메소드는 배열의 끝에 하나 이상의 요소를 추가합니다.
+
+```javascript
+let colors = ["red", "blue", "green"];
+colors.push("black", "white");
+console.log(colors); // ["red", "blue", "green", "black", "white"]
+```
+
+#### 2. pop()
+`pop()` 메소드는 배열의 마지막 요소를 제거합니다.
+
+```javascript
+let colors = ["red", "blue", "green"];
+let lastColor = colors.pop();
+console.log(lastColor); // "green"
+console.log(colors); // ["red", "blue"]
+```
+
+#### 3. shift()
+`shift()` 메소드는 배열의 첫 번째 요소를 제거합니다.
+
+```javascript
+let colors = ["red", "blue", "green"];
+let firstColor = colors.shift();
+console.log(firstColor); // "red"
+console.log(colors); // ["blue", "green"]
+```
+
+#### 4. unshift()
+`unshift()` 메소드는 배열의 맨 앞에 하나 이상의 요소를 추가합니다.
+
+```javascript
+let colors = ["red", "blue", "green"];
+colors.unshift("yellow", "purple");
+console.log(colors); // ["yellow", "purple", "red", "blue", "green"]
+```
+
+#### 5. slice()
+`slice()` 메소드는 배열의 일부를 제거하고 새로운 배열을 반환합니다.
+
+```javascript
+let colors = ["red", "blue", "green", "yellow", "purple"];
+let colorSlice = colors.slice(1, 4);
+console.log(colorSlice); // ["blue", "green", "yellow"]
+console.log(colors); // ["red", "blue", "green", "yellow", "purple"]
+```
+
+#### 6. splice()
+`splice()` 메소드는 배열의 요소를 제거하고 새로운 요소를 추가합니다.
+
+```javascript
+let colors = ["red", "blue", "green", "yellow", "purple"];
+colors.splice(2, 2, "black", "white");
+console.log(colors); // ["red", "blue", "black", "white", "purple"]
+```
+
+#### 7. join()
+`join()` 메소드는 배열의 모든 요소를 하나의 문자열로 결합합니다.
+
+```javascript
+let colors = ["red", "blue", "green"];
+let result = colors.join("-");
+console.log(result); // "red-blue-green"
+```
+
+#### 8. indexOf()
+`indexOf()` 메소드는 배열에서 특정 요소의 첫 번째 인덱스를 반환합니다.
+
+```javascript
+let colors = ["red", "blue", "green", "yellow", "purple"];
+let index = colors.indexOf("green");
+console.log(index); // 2
+```
+
+#### 9. lastIndexOf()
+`lastIndexOf()` 메소드는 배열에서 특정 요소의 마지막 인덱스를 반환합니다.
+
+```javascript
+let colors = ["red", "blue", "green", "yellow", "green", "purple"];
+let index = colors.lastIndexOf("green");
+console.log(index); // 4
+```
+
+#### 10. includes()
+`includes()` 메소드는 배열이 특정 요소를 포함하는지 여부를 확인합니다.
+
+```javascript
+let colors = ["red", "blue", "green", "yellow", "purple"];
+let result1 = colors.includes("green");
+console.log(result1); // true
+let result2 = colors.includes("black");
+console.log(result2); // false
+```
+
+이러한 배열 함수는 JavaScript에서 매우 유용하게 사용됩니다. 자주 사용함으로써 익숙해지며 좀 더 효율적인 코드 작성에 도움이 될 것입니다.

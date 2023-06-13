@@ -1,0 +1,56 @@
+안녕하세요. Python 언어의 초급 단계에서 Inheritance에 대해 설명해 드리겠습니다.
+
+Inheritance는 객체 지향 프로그래밍(OOP)에서 중요한 개념 중 하나입니다. 이는 클래스 간의 관계를 구현하는 방법 중 하나로, 하위 클래스가 상위 클래스의 특성을 상속받아 사용할 수 있게 하는 것입니다.
+
+이 과정에서, 상위 클래스는 "부모 클래스" 또는 "슈퍼 클래스"라고도 불리며, 하위 클래스는 "자식 클래스" 또는 "서브 클래스"라고도 불립니다. 자식 클래스는 부모 클래스의 모든 속성과 메소드를 상속받아 사용할 수 있습니다.
+
+이를 코드로 표현해 보겠습니다. 우선, 부모 클래스인 Person 클래스를 작성합니다.
+
+```python
+class Person:
+  def __init__(self, name, age):
+    self.name = name
+    self.age = age
+
+  def hello(self):
+    print("안녕하세요. 저는", self.name, "입니다.")
+```
+
+이제 이를 상속받아 자식 클래스인 Student 클래스를 작성합니다.
+
+```python
+class Student(Person):
+  def __init__(self, name, age, student_id):
+    super().__init__(name, age)
+    self.student_id = student_id
+
+  def study(self):
+    print(self.name, "학생이(가) 공부합니다.")
+```
+
+이 코드에서 `Student(Person)` 부분은 Student 클래스가 Person 클래스를 상속받는다는 것을 나타냅니다. 그리고 `super().__init__(name, age)` 부분은 부모 클래스의 `__init__` 메소드를 호출하여 자식 클래스도 부모 클래스의 속성을 초기화할 수 있도록 합니다.
+
+이제 이를 활용하여 객체를 생성하고 메소드를 호출해 보겠습니다.
+
+```python
+person = Person("홍길동", 30)
+student = Student("김철수", 20, "20210001")
+
+person.hello()
+student.hello()
+student.study()
+```
+
+이 코드를 실행하면 다음과 같은 결과가 출력됩니다.
+
+```
+안녕하세요. 저는 홍길동 입니다.
+안녕하세요. 저는 김철수 입니다.
+김철수 학생이(가) 공부합니다.
+```
+
+즉, 자식 클래스 `Student`가 부모 클래스 `Person`를 상속받았기 때문에 `hello` 메소드를 공유할 수 있고, `study` 메소드를 추가로 구현하여 사용할 수 있습니다.
+
+이처럼 상속은 코드의 재사용성과 유지보수성을 높여줍니다. 그러나 상속을 남용하면 복잡한 계층 구조를 만들어 코드를 이해하기 어렵게 만들 수 있으므로, 적절한 상속 계층을 구성할 필요가 있습니다.
+
+이상으로 Python 언어의 초급 단계에서 Inheritance에 대해 설명해 드렸습니다. 감사합니다.

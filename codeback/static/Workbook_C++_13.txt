@@ -1,0 +1,43 @@
+초급 단계에서 C++ 언어를 배우는 과정에서 가장 먼저 이해해야 할 개념 중 하나는 객체지향 프로그래밍(OOP)입니다. OOP는 프로그래밍을 부품화하여 유지보수 및 가독성을 높이기 위한 방법론입니다.
+
+객체는 데이터와 그 데이터를 다룰 수 있는 함수를 묶은 것으로, 클래스라는 틀 안에서 정의됩니다. 클래스는 객체의 공통적인 속성과 동작을 정의하는데, 속성은 데이터 멤버라 불리며 동작은 멤버 함수라 불립니다.
+
+다음은 학생을 나타내는 Student 클래스와 그 클래스의 객체를 생성하는 예시입니다.
+
+```
+#include <iostream>
+
+class Student {
+  private:
+    std::string name;
+    int age;
+  public:
+    void setName(std::string name) {
+      this->name = name;
+    }
+    void setAge(int age) {
+      this->age = age;
+    }
+    void printInfo() {
+      std::cout << "이름: " << name << ", 나이: " << age << std::endl;
+    }
+};
+
+int main() {
+  Student kim;
+  kim.setName("김철수");
+  kim.setAge(20);
+  kim.printInfo();
+
+  Student lee;
+  lee.setName("이영희");
+  lee.setAge(21);
+  lee.printInfo();
+
+  return 0;
+}
+```
+
+위 코드에서 Student 클래스는 이름과 나이라는 데이터 멤버와, 이름과 나이를 출력하는 멤버 함수를 가지고 있습니다. main() 함수에서 kim과 lee 객체를 생성하고, 각 객체의 이름과 나이를 set 함수를 통해 설정한 후, printInfo() 함수를 호출하여 화면에 출력합니다.
+
+이처럼 OOP를 활용하면 객체의 생성 및 조작이 용이해지며, 코드의 가독성 및 유지보수성이 높아집니다. 초급 단계에서는 OOP의 기본 개념을 이해하고, 클래스를 정의하고 객체를 생성하는 방법을 익히는 것이 중요합니다.

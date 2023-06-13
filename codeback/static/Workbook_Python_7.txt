@@ -1,0 +1,70 @@
+안녕하세요! Python 언어의 Dictionaries에 대해 설명해드릴게요.
+
+Python에서 Dictionaries(사전형)은 중괄호 {} 안에 키-값(Key-Value) 쌍으로 이루어져 있습니다. 키(Key)는 유일하며, 값(Value)은 중복될 수 있습니다. Dictionaries는 다른 언어에서의 해시 맵(hash map)이나 연관 배열(associative array)과 유사합니다.
+
+사전형은 필요할 때마다 새로운 키와 새로운 값을 추가하거나 기존의 값을 변경할 수 있습니다. 이는 정말 유용한 기능 중 하나로, 웹 개발, 데이터 사이언스, 머신러닝 등 여러 분야에서 많이 활용됩니다.
+
+예시를 통해 자세히 살펴보도록 하겠습니다.
+
+```
+# 빈 딕셔너리 생성
+my_dict = {}
+
+# 딕셔너리에 키-값 쌍 추가
+my_dict["name"] = "홍길동"
+my_dict["age"] = 30
+
+# 딕셔너리 출력
+print(my_dict)
+# 출력: {"name": "홍길동", "age": 30}
+
+# 딕셔너리 값 변경
+my_dict["age"] = 40
+
+# 딕셔너리 출력
+print(my_dict)
+# 출력: {"name": "홍길동", "age": 40}
+```
+
+위 예시에서는 빈 딕셔너리를 먼저 만들고, 이후에 각각 "name", "age"라는 키(Key)와 각각에 해당하는 값을 값(Value)으로 추가했습니다. 그리고 마지막으로 "age" 키에 해당하는 값을 변경해주었습니다.
+
+Dictionaries는 키를 이용해 값을 조회하거나 삭제할 수도 있습니다. 아래 예시를 보여드리겠습니다.
+
+```
+# 딕셔너리 값 조회
+name_value = my_dict["name"]
+print(name_value)
+# 출력: "홍길동"
+
+# 딕셔너리 값 삭제
+del my_dict["name"]
+
+# 딕셔너리 출력
+print(my_dict)
+# 출력: {"age": 40}
+```
+
+위 예시에서는 "name" 키에 해당하는 값을 먼저 조회하고, 이후에 "name" 키를 이용해 해당하는 값을 삭제해주었습니다.
+
+더불어 Dictionaries는 `.keys()`, `.values()`, `.items()` 메소드를 이용해 각각 딕셔너리의 키(key), 값(value), 키-값 쌍(key-value pair)을 조회할 수도 있습니다. 아래 예시를 통해 알아보겠습니다.
+
+```
+# 딕셔너리 키 조회
+keys = my_dict.keys()
+print(keys)
+# 출력: dict_keys(["age"])
+
+# 딕셔너리 값 조회
+values = my_dict.values()
+print(values)
+# 출력: dict_values([40])
+
+# 딕셔너리 키-값 쌍 조회
+items = my_dict.items()
+print(items)
+# 출력: dict_items([("age", 40)])
+```
+
+위 예시에서는 `.keys()`, `.values()`, `.items()` 메소드를 이용해 각각 키(key), 값(value), 키-값 쌍(key-value pair)을 조회해주었습니다.
+
+이러한 방식으로 Dictionaries를 자유롭게 이용하실 수 있습니다. 다음으로는 Python 언어에서의 Sets에 대해 설명해드릴게요!

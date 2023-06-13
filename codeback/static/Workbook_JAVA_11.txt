@@ -1,0 +1,45 @@
+자바 언어에서 예외란 미리 예상하지 못한 문제 때문에 프로그램이 오작동하는 상황을 의미합니다. 이러한 상황에서 프로그램이 죽거나 엉뚱한 동작을 하게 되는데, 이를 방지하기 위해 예외 처리가 필요합니다.
+
+자바에서 예외 처리를 하기 위해서는 try-catch-finally 구문을 사용합니다. try 구문 안에서 예외가 발생하면 catch 구문으로 이동하여 예외를 처리하게 됩니다. finally 구문에서는 예외 발생 여부와 상관없이 반드시 실행되는 코드를 작성할 수 있습니다.
+
+다음은 try-catch-finally 구문을 사용하는 코드 예시입니다.
+
+```java
+try {
+    int a = 10 / 0; // 예외 발생 코드
+} catch (ArithmeticException e) {
+    System.out.println("0으로 나눌 수 없습니다.");
+} finally {
+    System.out.println("예외 처리가 끝났습니다.");
+}
+```
+
+위 코드에서는 10을 0으로 나누는 예외 상황이 발생합니다. 이때, ArithmeticException이라는 예외가 발생하게 됩니다. catch 구문에서는 발생한 예외에 대한 처리를 할 수 있습니다. finally 구문에서는 반드시 실행되는 내용을 작성할 수 있습니다.
+
+또한, catch 구문에서 여러 종류의 예외를 처리하는 것도 가능합니다. 예를 들어, 다음과 같이 여러 개의 catch 구문을 사용해 여러 종류의 예외를 처리할 수 있습니다.
+
+```java
+try {
+    // 예외 발생 코드
+} catch (ArithmeticException e) {
+    System.out.println("0으로 나눌 수 없습니다.");
+} catch (NullPointerException e) {
+    System.out.println("널 포인터 예외가 발생했습니다.");
+} catch (Exception e) {
+    System.out.println("예상치 못한 예외가 발생했습니다.");
+} finally {
+    System.out.println("예외 처리가 끝났습니다.");
+}
+```
+
+위 코드에서는 ArithmeticException, NullPointerException, 그 외의 예외에 대해 각각 다른 처리를 하도록 catch 구문을 작성하였습니다. 마지막 catch 구문에서는 Exception 클래스를 상속하는 모든 예외에 대해 처리할 수 있도록 하였습니다.
+
+또한, 자바에서는 throws를 사용하여 메소드에서 발생할 수 있는 예외를 미리 선언할 수 있습니다. 이렇게 선언된 예외는 해당 메소드를 사용하는 코드에서 처리하도록 강제할 수 있습니다.
+
+```java
+public void someMethod() throws SomeException {
+    // 예외 발생 코드
+}
+```
+
+위 코드에서는 someMethod() 메소드에서 SomeException이 발생할 수 있음을 미리 선언하고 있습니다. 이 메소드를 사용하는 코드에서는 try-catch 구문을 사용하거나, 또는 throws를 사용하여 이 예외를 더 상위 메소드에 전파할 수 있습니다.
